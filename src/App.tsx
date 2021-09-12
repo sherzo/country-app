@@ -1,18 +1,10 @@
+import Header from 'components/Header';
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>Countries app</p>
-        <a
-          className="App-link"
-          href="https://countries.trevorblades.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          API GQL
-        </a>
-      </header>
-    </div>
+    <main className="min-h-screen bg-gray-100">
+      <Header />
+    </main>
   );
 }
 
