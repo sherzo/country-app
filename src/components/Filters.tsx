@@ -3,7 +3,7 @@ import SearchBar from 'components/SearchBar';
 
 export default function Filters() {
   return (
-    <div className="flex justify-between flex-col lg:flex-row relative my-4 mx-3 lg:my-5 lg:mx-12">
+    <div className="flex justify-between flex-col lg:flex-row relative m-5 lg:my-10 lg:mx-16">
       <SearchBar />
 
       <div className="flex flex-col lg:w-2/6 lg:flex-row">
