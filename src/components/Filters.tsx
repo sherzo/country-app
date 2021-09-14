@@ -1,7 +1,13 @@
 import React from 'react';
 import SearchBar from 'components/SearchBar';
 
-export default function Filters() {
+type FiltersProp = TCountriesFilters;
+
+export default function Filters({
+  countryName,
+  currency,
+  continent,
+}: FiltersProp) {
   return (
     <div className="flex justify-between flex-col lg:flex-row relative my-5 mx-6 lg:my-10 lg:mx-16">
       <SearchBar />

@@ -17,3 +17,18 @@ type TContinent = {
   code: string;
   name: string;
 };
+
+type TCountriesState = {
+  countries: TCountry[];
+  filters: TCountriesFilters;
+};
+
+type TCountriesFilters = {
+  countryName: string;
+  currency: string;
+  continent: string;
+};
+
+type IRootState = {
+  countries: TCountriesState;
+};
