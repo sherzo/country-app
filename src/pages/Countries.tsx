@@ -23,7 +23,7 @@ export default function CountriesPage() {
   const { loading, error, data } = useQuery(EXCHANGE_RATES);
   const dispatch = useDispatch();
   const { countries, filters } = useSelector(
-    (state: IRootState) => state.countries
+    (state: TRootState) => state.countries
   );
 
   useEffect(() => {

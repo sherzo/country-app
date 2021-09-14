@@ -29,6 +29,6 @@ type TCountriesFilters = {
   continent: string;
 };
 
-type IRootState = {
+type TRootState = {
   countries: TCountriesState;
 };
