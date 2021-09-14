@@ -22,26 +22,23 @@ export default function Filters({
   const { continents } = data ?? { continents: [] };
   const dispatch = useDispatch();
 
-  const onChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    dispatch(setCountriesFilter(FilterTypes.CONTINENT, e.target.value));
-  };
-
-  const onChangeSearchBar = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(setCountriesFilter(FilterTypes.COUNTRY_NAME, e.target.value));
-  };
-
-  const onChangeCurrency = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(setCountriesFilter(FilterTypes.CURRENCY, e.target.value));
-  };
+  const onChange =
+    (filterName: FilterTypes) =>
+    (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>) => {
+      dispatch(setCountriesFilter(filterName, e.target.value));
+    };
 
   return (
     <div className="flex justify-between flex-col lg:flex-row relative my-5 mx-6 lg:my-10 lg:mx-24">
-      <SearchBar value={countryName} onChange={onChangeSearchBar} />
+      <SearchBar
+        value={countryName}
+        onChange={onChange(FilterTypes.COUNTRY_NAME)}
+      />
 
       <div className="flex flex-col lg:w-2/6 lg:flex-row">
         <select
           value={continent}
-          onChange={onChange}
+          onChange={onChange(FilterTypes.CONTINENT)}
           className="shadow mr-8 min-w-full lg:min-w-min w-1/2 px-4 py-3 mt-2 lg:mt-0"
         >
           <option value="">Continents</option>
@@ -53,7 +50,7 @@ export default function Filters({
         </select>
         <input
           value={currency}
-          onChange={onChangeCurrency}
+          onChange={onChange(FilterTypes.CURRENCY)}
           placeholder="Currency"
           className="shadow min-w-full lg:min-w-min w-1/2 px-4 py-3 mt-2 lg:mt-0"
         />
