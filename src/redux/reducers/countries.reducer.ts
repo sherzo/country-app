@@ -1,7 +1,11 @@
-import { SET_COUNTRIES } from 'redux/types/countries.types';
+import {
+  SET_COUNTRIES,
+  SET_COUNTRIES_FILTERS,
+} from 'redux/types/countries.types';
 
 const InitialValue: TCountriesState = {
   countries: [],
+  countriesByName: [],
   filters: {
     countryName: '',
     currency: '',
@@ -18,6 +22,22 @@ export const CountriesReducer = (
       return {
         ...state,
         countries: action.payload,
+      };
+    }
+    case SET_COUNTRIES_FILTERS: {
+      const { filterName, value } = action.payload;
+
+      const countriesByName = state.countries.filter((country) =>
+        country.name.toLowerCase().includes(value.toLowerCase())
+      );
+
+      return {
+        ...state,
+        countriesByName,
+        filters: {
+          ...state.filters,
+          [filterName]: value,
+        },
       };
     }
   }

@@ -21,6 +21,7 @@ type TContinent = {
 type TCountriesState = {
   countries: TCountry[];
   filters: TCountriesFilters;
+  countriesByName: TCountry[];
 };
 
 type TCountriesFilters = {
@@ -32,3 +33,9 @@ type TCountriesFilters = {
 type TRootState = {
   countries: TCountriesState;
 };
+
+enum FilterTypes {
+  CURRENCY = 'currency',
+  COUNTRY_NAME = 'countryName',
+  CONTINENT = 'continent',
+}

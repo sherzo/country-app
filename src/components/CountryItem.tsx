@@ -9,14 +9,14 @@ export default function CountryItem({
   return (
     <a
       href={`/country/${code.toLowerCase()}`}
-      className="w-full overflow-hidden md:w-1/2 lg:w-1/3 xl:w-1/4 px-6 pb-6"
+      className="w-full overflow-hidden md:w-1/2 lg:w-1/3 xl:w-1/4 px-8 pb-12"
       key={code}
     >
-      <div className="bg-white rounded-md shadow-sm">
+      <div className="bg-white rounded-md shadow">
         <img
-          src="./assets/img/bandera.png"
+          src={`https://flagcdn.com/h240/${code.toLowerCase()}.png`}
           alt="Bandera"
-          className="rounded-t-sm"
+          className="h-40 object-cover min-w-full rounded-t-md"
         />
         <div className="p-5">
           <h3 className="text-xl font-medium">{name}</h3>

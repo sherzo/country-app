@@ -1,34 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Filters from 'components/Filters';
 import CountryList from 'components/CountryList';
 import Layout from 'components/Layout';
-import { gql, useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCountries } from 'redux/actions/countries.actions';
-
-const EXCHANGE_RATES = gql`
-  query GetCountries {
-    countries {
-      code
-      name
-      capital
-      continent {
-        name
-      }
-    }
-  }
-`;
+import { GET_COUNTRIES } from 'grahpql';
 
 export default function CountriesPage() {
-  const { loading, error, data } = useQuery(EXCHANGE_RATES);
   const dispatch = useDispatch();
-  const { countries, filters } = useSelector(
+  const { countries, filters, countriesByName } = useSelector(
     (state: TRootState) => state.countries
   );
+  const { loading, error, data } = useQuery(GET_COUNTRIES);
 
   useEffect(() => {
     dispatch(setCountries(data?.countries ?? []));
-  }, [data]);
+  }, [data, dispatch]);
 
   if (error) {
     return null;
@@ -37,7 +25,10 @@ export default function CountriesPage() {
   return (
     <Layout>
       <Filters {...filters} />
-      <CountryList countries={countries} loading={loading} />
+      <CountryList
+        countries={filters.countryName.length > 0 ? countriesByName : countries}
+        loading={loading}
+      />
     </Layout>
   );
 }

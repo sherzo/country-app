@@ -1,6 +1,11 @@
 import React from 'react';
 
-export default function SearchBar() {
+type SearchBarProp = {
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+};
+
+export default function SearchBar({ value, onChange }: SearchBarProp) {
   return (
     <div className="lg:w-2/5">
       <svg
@@ -21,6 +26,8 @@ export default function SearchBar() {
         type="text"
         className="min-w-full py-3 pl-12 pr-6 border-b-1 shadow rounded-sm focus:border-transparent"
         placeholder="Search by country name"
+        onChange={onChange}
+        value={value}
       />
     </div>
   );
