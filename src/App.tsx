@@ -1,12 +1,19 @@
 import CountriesPage from 'pages/Countries';
 import CountryPage from 'pages/Country';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <main className="min-h-screen bg-gray-100">
-      {/* <CountriesPage /> */}
-      <CountryPage />
-    </main>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/">
+          <CountriesPage />
+        </Route>
+        <Route exact path="/country/:code">
+          <CountryPage />
+        </Route>
+      </Switch>
+    </BrowserRouter>
   );
 }
 

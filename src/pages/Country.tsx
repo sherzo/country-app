@@ -1,10 +1,9 @@
 import React from 'react';
-import Header from 'components/Header';
+import Layout from 'components/Layout';
 
 export default function CountryPage() {
   return (
-    <div>
-      <Header />
+    <Layout>
       <div className="px-6 lg:px-16">
         <a
           href="/"
@@ -59,7 +58,7 @@ export default function CountryPage() {
           </div>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 }
 

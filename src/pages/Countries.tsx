@@ -1,14 +1,13 @@
 import React from 'react';
-import Header from 'components/Header';
 import Filters from 'components/Filters';
 import CountryList from 'components/CountryList';
+import Layout from 'components/Layout';
 
 export default function CountriesPage() {
   return (
-    <div>
-      <Header />
+    <Layout>
       <Filters />
       <CountryList />
-    </div>
+    </Layout>
   );
 }
