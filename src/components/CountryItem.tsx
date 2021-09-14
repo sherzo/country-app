@@ -5,7 +5,7 @@ export default function CountryItem({
   name,
   capital,
   continent,
-}: Country) {
+}: TCountry) {
   return (
     <a
       href={`/country/${code.toLowerCase()}`}
