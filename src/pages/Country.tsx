@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Layout from 'components/Layout';
 import { useParams } from 'react-router';
 import { useQuery } from '@apollo/client';
@@ -6,7 +6,7 @@ import { GET_COUNTRY } from 'grahpql/getCountry.query';
 
 export default function CountryPage() {
   const { code } = useParams<{ code: string }>();
-  const { loading, error, data } = useQuery(GET_COUNTRY, {
+  const { loading, data } = useQuery(GET_COUNTRY, {
     variables: {
       code,
     },
