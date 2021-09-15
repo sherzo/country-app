@@ -2,6 +2,7 @@ type TCountry = {
   code: string;
   name: string;
   native: string;
+  currency: string;
   phone: string;
   capital: string;
   languagues: TLanguage[];
