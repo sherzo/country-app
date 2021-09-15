@@ -9,10 +9,14 @@ import { GET_COUNTRIES } from 'grahpql';
 
 export default function CountriesPage() {
   const dispatch = useDispatch();
-  const { countries, filters, countriesByName } = useSelector(
+  const { countries, filters, filterQuery, countriesByName } = useSelector(
     (state: TRootState) => state.countries
   );
-  const { loading, error, data } = useQuery(GET_COUNTRIES);
+  const { loading, error, data } = useQuery(GET_COUNTRIES, {
+    variables: {
+      filter: filterQuery,
+    },
+  });
 
   useEffect(() => {
     dispatch(setCountries(data?.countries ?? []));

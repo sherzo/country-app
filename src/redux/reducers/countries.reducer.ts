@@ -1,9 +1,10 @@
 import {
   SET_COUNTRIES,
   SET_COUNTRIES_FILTERS,
+  FILTER_COUNTRIES_BY_NAME,
 } from 'redux/types/countries.types';
 
-const InitialValue: TCountriesState = {
+const initialValue: TCountriesState = {
   countries: [],
   countriesByName: [],
   filters: {
@@ -11,11 +12,12 @@ const InitialValue: TCountriesState = {
     currency: '',
     continent: '',
   },
+  filterQuery: {},
 };
 
 export const CountriesReducer = (
-  state: TCountriesState = InitialValue,
-  action: any
+  state: TCountriesState = initialValue,
+  action: { payload: any; type: string }
 ): TCountriesState => {
   switch (action.type) {
     case SET_COUNTRIES: {
@@ -26,18 +28,33 @@ export const CountriesReducer = (
     }
     case SET_COUNTRIES_FILTERS: {
       const { filterName, value } = action.payload;
-
-      const countriesByName = state.countries.filter((country) =>
-        country.name.toLowerCase().includes(value.toLowerCase())
-      );
+      const filterQuery: TFilterQuery = state.filterQuery;
+      // @ts-ignore
+      filterQuery[filterName] = {
+        eq: value,
+      };
 
       return {
         ...state,
-        countriesByName,
         filters: {
           ...state.filters,
           [filterName]: value,
         },
+        filterQuery,
+      };
+    }
+    case FILTER_COUNTRIES_BY_NAME: {
+      const countriesByName = state.countries.filter((country) =>
+        country.name.toLowerCase().includes(action.payload.toLowerCase())
+      );
+
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          countryName: action.payload,
+        },
+        countriesByName,
       };
     }
   }

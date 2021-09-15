@@ -3,7 +3,10 @@ import SearchBar from 'components/SearchBar';
 import { useQuery } from '@apollo/client';
 import { GET_CONTINENTS } from 'grahpql';
 import { useDispatch } from 'react-redux';
-import { setCountriesFilter } from 'redux/actions/countries.actions';
+import {
+  filterCountriesByName,
+  setCountriesFilter,
+} from 'redux/actions/countries.actions';
 
 enum FilterTypes {
   CURRENCY = 'currency',
@@ -28,12 +31,15 @@ export default function Filters({
       dispatch(setCountriesFilter(filterName, e.target.value));
     };
 
+  const onChangeCountryName = (
+    e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>
+  ) => {
+    dispatch(filterCountriesByName(e.target.value));
+  };
+
   return (
     <div className="flex justify-between flex-col lg:flex-row relative my-5 mx-6 lg:my-10 lg:mx-24">
-      <SearchBar
-        value={countryName}
-        onChange={onChange(FilterTypes.COUNTRY_NAME)}
-      />
+      <SearchBar value={countryName} onChange={onChangeCountryName} />
 
       <div className="flex flex-col lg:w-2/6 lg:flex-row">
         <select
@@ -43,7 +49,7 @@ export default function Filters({
         >
           <option value="">Continents</option>
           {continents?.map((continent: TContinent) => (
-            <option key={continent.code} value={continent.code}>
+            <option key={continent.code} value={continent.name}>
               {continent.name}
             </option>
           ))}

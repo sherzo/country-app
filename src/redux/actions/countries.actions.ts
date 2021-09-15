@@ -1,4 +1,5 @@
 import {
+  FILTER_COUNTRIES_BY_NAME,
   SET_COUNTRIES,
   SET_COUNTRIES_FILTERS,
 } from 'redux/types/countries.types';
@@ -19,6 +20,15 @@ export function setCountriesFilter(filterName: FilterTypes, value: string) {
       filterName,
       value,
     },
+  };
+
+  return action;
+}
+
+export function filterCountriesByName(value: string) {
+  const action = {
+    type: FILTER_COUNTRIES_BY_NAME,
+    payload: value,
   };
 
   return action;

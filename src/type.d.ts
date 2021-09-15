@@ -22,6 +22,21 @@ type TCountriesState = {
   countries: TCountry[];
   filters: TCountriesFilters;
   countriesByName: TCountry[];
+  filterQuery: TFilterQuery;
+};
+
+type TFilterQuery = {
+  currency?: TStringQueryOperator;
+  continent?: TStringQueryOperator;
+};
+
+type TStringQueryOperator = {
+  eq: string;
+  ne: string;
+  in: string;
+  nin: string;
+  regex: string;
+  glob: string;
 };
 
 type TCountriesFilters = {
