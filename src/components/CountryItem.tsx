@@ -5,6 +5,7 @@ export default function CountryItem({
   name,
   capital,
   continent,
+  currency,
 }: TCountry) {
   return (
     <a
@@ -25,6 +26,9 @@ export default function CountryItem({
           </p>
           <p className="mt-3">
             <b>Continent: </b> {continent.name}
+          </p>
+          <p className="mt-3">
+            <b>Currency: </b> {currency}
           </p>
         </div>
       </div>

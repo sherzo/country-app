@@ -12,15 +12,19 @@ export default function CountriesPage() {
   const { countries, filters, filterQuery, countriesByName } = useSelector(
     (state: TRootState) => state.countries
   );
-  const { loading, error, data } = useQuery(GET_COUNTRIES, {
-    variables: {
-      filter: filterQuery,
-    },
-  });
+  const { loading, error, data, refetch } = useQuery(GET_COUNTRIES);
 
   useEffect(() => {
     dispatch(setCountries(data?.countries ?? []));
   }, [data, dispatch]);
+
+  useEffect(() => {
+    const getByFilter = async () => {
+      const { data } = await refetch({ filter: filterQuery });
+      dispatch(setCountries(data?.countries ?? []));
+    };
+    getByFilter();
+  }, [filterQuery, filters, dispatch, refetch]);
 
   if (error) {
     return null;

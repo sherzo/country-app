@@ -6,6 +6,7 @@ export const GET_COUNTRIES = gql`
       code
       name
       capital
+      currency
       continent {
         name
       }

@@ -49,7 +49,7 @@ export default function Filters({
         >
           <option value="">Continents</option>
           {continents?.map((continent: TContinent) => (
-            <option key={continent.code} value={continent.name}>
+            <option key={continent.code} value={continent.code}>
               {continent.name}
             </option>
           ))}

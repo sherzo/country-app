@@ -34,6 +34,11 @@ export const CountriesReducer = (
         eq: value,
       };
 
+      if (!value) {
+        // @ts-ignore
+        delete filterQuery[filterName];
+      }
+
       return {
         ...state,
         filters: {
