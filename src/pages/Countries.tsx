@@ -30,13 +30,13 @@ export default function CountriesPage() {
     return null;
   }
 
+  const countriesList =
+    filters.countryName.length > 0 ? countriesByName : countries;
+
   return (
     <Layout>
       <Filters {...filters} />
-      <CountryList
-        countries={filters.countryName.length > 0 ? countriesByName : countries}
-        loading={loading}
-      />
+      <CountryList countries={countriesList} loading={loading} />
     </Layout>
   );
 }
