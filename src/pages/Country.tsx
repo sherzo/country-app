@@ -6,16 +6,21 @@ import { GET_COUNTRY } from 'grahpql/getCountry.query';
 
 export default function CountryPage() {
   const { code } = useParams<{ code: string }>();
-  const { loading, error, data } = useQuery(GET_COUNTRY);
-  const country: TCountry = data?.country ?? {};
+  const { loading, error, data } = useQuery(GET_COUNTRY, {
+    variables: {
+      code,
+    },
+  });
+  console.log('data', data);
+  const country: TCountry = data?.country;
 
   if (loading) {
-    return <div>Cargando...</div>;
+    return null;
   }
 
   return (
     <Layout>
-      <div className="px-6 lg:px-16">
+      <div className="px-6 lg:px-16 pb-8">
         <a
           href="/"
           className="bg-white flex items-center w-24 px-4 py-2 shadow mt-12"
@@ -40,11 +45,11 @@ export default function CountryPage() {
             <img
               src={`https://flagcdn.com/h240/${code.toLowerCase()}.png`}
               alt="Bandera"
-              className="h-40 object-cover min-w-full"
+              className="h-40 lg:h-96 object-cover min-w-full"
             />
           </div>
           <div className="lg:w-1/2 lg:pl-10">
-            <h1 className="text-3xl font-medium">{}</h1>
+            <h1 className="text-2xl lg:text-3xl font-medium">{country.name}</h1>
 
             <p className="mt-3">
               <b>Native Name:</b> {country.native}
@@ -62,7 +67,7 @@ export default function CountryPage() {
               <b>Languages:</b>
             </p>
             <div className="flex flex-wrap mt-4">
-              {country.languagues.map(LangItem)}
+              {country.languages.map(LangItem)}
             </div>
           </div>
         </div>
@@ -71,8 +76,8 @@ export default function CountryPage() {
   );
 }
 
-function LangItem({ code }: TLanguage) {
+function LangItem({ code, name }: TLanguage) {
   return (
-    <div className="shadow bg-white px-4 py-2 mr-4 rounded-sm">{code}</div>
+    <div className="shadow bg-white px-4 py-2 mr-4 rounded-sm">{name}</div>
   );
 }

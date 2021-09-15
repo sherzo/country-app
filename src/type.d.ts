@@ -5,7 +5,7 @@ type TCountry = {
   currency: string;
   phone: string;
   capital: string;
-  languagues: TLanguage[];
+  languages: TLanguage[];
   continent: TContinent;
   currency: string;
 };

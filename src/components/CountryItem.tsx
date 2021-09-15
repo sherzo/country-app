@@ -9,7 +9,7 @@ export default function CountryItem({
 }: TCountry) {
   return (
     <a
-      href={`/country/${code.toLowerCase()}`}
+      href={`/country/${code}`}
       className="w-full overflow-hidden md:w-1/2 lg:w-1/3 xl:w-1/4 px-8 pb-12"
       key={code}
     >

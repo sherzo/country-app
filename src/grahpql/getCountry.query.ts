@@ -5,6 +5,7 @@ export const GET_COUNTRY = gql`
     country(code: $code) {
       code
       name
+      native
       currency
       capital
       continent {
