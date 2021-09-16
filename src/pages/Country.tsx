@@ -37,7 +37,7 @@ export default function CountryPage() {
               clipRule="evenodd"
             />
           </svg>
-          <span className="pl-2">Atras</span>
+          <span className="pl-2">Back</span>
         </a>
 
         <div className="flex mt-12 flex-col lg:flex-row">
