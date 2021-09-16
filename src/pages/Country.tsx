@@ -23,7 +23,7 @@ export default function CountryPage() {
       <div className="px-6 lg:px-16 pb-8">
         <a
           href="/"
-          className="bg-white flex items-center w-24 px-4 py-2 shadow mt-12"
+          className="bg-white flex items-center w-32 px-4 py-2 shadow mt-12"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
