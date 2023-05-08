@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+# 🌎 Country app (React + Typescipt + Graphql + ApolloClient)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ [![Home country app desktop capture](./docs/img/home-desktop-capture.png)](https://country-app-tan.vercel.app)
 
-## Available Scripts
+## 🚀 Demo
 
-In the project directory, you can run:
+See demo [here](https://country-app-tan.vercel.app/)
 
-### `yarn start`
+## 👩‍💻 Project explanation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Web application that shows country information. Information such as flag, capital, languages, currency among others. All this is consumed from the API in `graphql`: <https://countries.trevorblades.com/>.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🛠️ Environment Setup
 
-### `yarn test`
+### Needed tools
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Install [node.js](https://nodejs.org/)
+2. Clone this project: `git clone https://github.com/sherzo/country-app`
+3. Move to the project folder: `cd country-app`
 
-### `yarn build`
+### 🔥 Application execution
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Install all the dependencies `yarn install` or `npm install`
+2. Run dev: `yarn start` or `npm run start`
+3. Open in your browser: `http://localhost:3000`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🤳 Responsive
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<pre>
+<div style="-webkit-column-count: 2; -moz-column-count: 2; column-count: 2;"><div style="display: inline-block;"><img src="./docs/img/home-mobile-capture.png" /></div>
+  <div style="display: inline-block;"><img src="./docs/img/country-mobile-capture.png" /></div></div></pre>
