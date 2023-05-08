@@ -35,8 +35,8 @@ type TFilterQuery = {
 type TStringQueryOperator = {
   eq: string;
   ne: string;
-  in: string;
-  nin: string;
+  in: Array<string>;
+  nin: Array<string>;
   regex: string;
   glob: string;
 };
@@ -50,9 +50,3 @@ type TCountriesFilters = {
 type TRootState = {
   countries: TCountriesState;
 };
-
-enum FilterTypes {
-  CURRENCY = 'currency',
-  COUNTRY_NAME = 'countryName',
-  CONTINENT = 'continent',
-}
