@@ -26,6 +26,5 @@ Web application that shows country information. Information such as flag, capita
 
 ## 🤳 Responsive
 
-<pre>
 <div style="-webkit-column-count: 2; -moz-column-count: 2; column-count: 2;"><div style="display: inline-block;"><img src="./docs/img/home-mobile-capture.png" /></div>
-  <div style="display: inline-block;"><img src="./docs/img/country-mobile-capture.png" /></div></div></pre>
+  <div style="display: inline-block;"><img src="./docs/img/country-mobile-capture.png" /></div></div>
