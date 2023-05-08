@@ -11,7 +11,7 @@ export default function CountryPage() {
       code,
     },
   });
-  console.log('data', data);
+
   const country: TCountry = data?.country;
 
   if (loading) {
