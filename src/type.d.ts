@@ -50,3 +50,9 @@ type TCountriesFilters = {
 type TRootState = {
   countries: TCountriesState;
 };
+
+enum FilterTypes {
+  CURRENCY = 'currency',
+  COUNTRY_NAME = 'countryName',
+  CONTINENT = 'continent',
+}
