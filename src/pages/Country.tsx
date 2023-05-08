@@ -78,6 +78,8 @@ export default function CountryPage() {
 
 function LangItem({ code, name }: TLanguage) {
   return (
-    <div className="shadow bg-white px-4 py-2 mr-4 rounded-sm">{name}</div>
+    <div className="shadow bg-white px-4 py-2 mr-4 rounded-sm" key={code}>
+      {name}
+    </div>
   );
 }
