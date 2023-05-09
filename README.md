@@ -1,4 +1,4 @@
-# 🌎 Country app (React + Typescipt + Graphql + ApolloClient)
+# 🌎 Country app (React + Typescript + Graphql)
 
  [![Home country app desktop capture](./docs/img/home-desktop-capture.png)](https://country-app-tan.vercel.app)
 
